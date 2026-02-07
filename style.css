@@ -1,0 +1,149 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', cursive;
+    background: linear-gradient(to bottom, #ffc0cb, #ff9eb5);
+    overflow: hidden;
+    text-align: center;
+    color: #fff;
+}
+
+/* MAIN TEXT */
+.container {
+    position: relative;
+    z-index: 10;
+    margin-top: 120px;
+}
+
+h1 {
+    font-size: 40px;
+    text-shadow: 0 0 15px #ff4d88;
+}
+
+.subtitle {
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+/* BUTTON */
+button {
+    padding: 15px 35px;
+    font-size: 20px;
+    background: white;
+    color: #ff4d88;
+    border: none;
+    border-radius: 40px;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 0 20px #ff4d88;
+}
+
+button:hover {
+    transform: scale(1.1);
+}
+
+/* POPUP */
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-content {
+    background: #fff0f5;
+    color: #ff0066;
+    padding: 30px;
+    border-radius: 20px;
+    width: 350px;
+    animation: fadeIn 0.6s;
+}
+
+.message {
+    font-size: 18px;
+    margin: 20px 0;
+    line-height: 1.6;
+}
+
+#timer {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+#close {
+    float: right;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+/* PHOTO FALLING */
+.falling-photos {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 1;
+}
+.falling-photos img {
+    position: fixed;
+    top: -100px;
+    width: 90px;
+    border-radius: 15px;
+    animation: fall linear infinite;
+    z-index: 1;
+    pointer-events: none;
+}
+
+
+
+@keyframes fall {
+    to {
+        transform: translateY(110vh) rotate(360deg);
+    }
+}
+
+@keyframes fadeIn {
+    from {opacity:0; transform:scale(0.8);}
+    to {opacity:1; transform:scale(1);}
+}
+/* MOBILE RESPONSIVE */
+@media(max-width:600px){
+
+h1{
+    font-size:28px;
+}
+
+.subtitle{
+    font-size:16px;
+    padding:0 15px;
+}
+
+button{
+    font-size:18px;
+    padding:12px 25px;
+}
+
+.popup-content{
+    width:90%;
+}
+
+.message{
+    font-size:16px;
+}
+
+#timer{
+    font-size:16px;
+}
+
+.falling-photos img{
+    width:60px;
+}
+}
